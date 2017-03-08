@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#set_other_amount").click(function(){
+        $("#Other_amount").text("Hello world!");
+    });
+    $("#btn2").click(function(){
+        $("#test2").html("<b>Hello world!</b>");
+    });
+    $("#btn3").click(function(){
+        $("#test3").val("Dolly Duck");
+    });
+});
+
+function validate() {
+    var x = document.getElementById("USD_amount").value;
+    if (x == "") {
+        alert("USD must be filled out");
+        return false;
+    } else {
+        var text;
+
+        // If x is Not a Number or less than one
+        if (isNaN(x) || x < 1 ) {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("error_msg").innerHTML = text;
+
+    }
+}
+</script>
+</head>
+<body>
+
+<p>U. S. Dollar amount</p>
+<input type="text" name="USD_amount">
+<p>Equivalent in ...</p>
+<input type="text" name="Other_amount">
+<br>
+<br>
+<button id="set_other_amount" onclick="validate()">Set to 5</button>
+
+<button onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
+
+<p id="error_msg"></p>
+</body>
+</html>
