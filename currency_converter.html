@@ -4,14 +4,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#set_other_amount").click(function(){
-        $("#Other_amount").text("Hello world!");
-    });
-    $("#btn2").click(function(){
-        $("#test2").html("<b>Hello world!</b>");
-    });
-    $("#btn3").click(function(){
-        $("#test3").val("Dolly Duck");
+    $("#CAD").click(function(){
+        $("#equiv_text").text("Canadian");
     });
 });
 
@@ -37,9 +31,17 @@ function validate() {
 </head>
 <body>
 
+<p>Converting U. S. Dollars to other currencies</p>
+
 <p>U. S. Dollar amount</p>
 <input type="text" name="USD_amount">
-<p>Equivalent in ...</p>
+<br>
+<input type="radio" name="CAD" value="CAD_choice">Canadian Dollars
+<br>
+<input type="radio" name="MXN" value="MXN_choice">Mexican Pesos
+<br>
+<input type="radio" name="EUR" value="EUR_choice">Euros
+<p id="equiv_text">Equivalent in ...</p>
 <input type="text" name="Other_amount">
 <br>
 <br>
