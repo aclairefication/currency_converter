@@ -28,6 +28,10 @@ function page_reload(){
 	location.reload();
 };
 
+function set_result_text(result_value){
+	$("#Other_amt").val(result_value);
+};
+
 function validate() {
     var x = document.getElementById("USD_amount").value;
     var text;
@@ -66,7 +70,7 @@ function validate() {
 <br>
 <button id="set_other_amount" onclick="validate()">Validate</button>
 <button id="set_other_amount" onclick="page_reload()">Reset</button>
-<button id="set_other_amount" onclick="document.getElementById('error_msg').val='5'">Set to 5</button>
+<button id="set_other_amount" onclick="set_result_text('5')">Set to 5</button>
 <button onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
 
 <p id="error_msg"></p>
