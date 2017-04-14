@@ -4,14 +4,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#CAD").click(function(){
-        $("#equiv_text").text("Canadian");
-    });
+
+	$("#CAD").click(function(){
+        $("#equiv_text").text(function(){
+			return "Equivalent in " + $("#CAD").parent('label').text();
+		});
+	});
+	
     $("#MXN").click(function(){
-        $("#equiv_text").text("Mexican");
+        $("#equiv_text").text(function(){
+		});
+			return "Equivalent in " + $("#MXN").parent('label').text();
     });
     $("#EUR").click(function(){
-        $("#equiv_text").text("Euro");
+        $("#equiv_text").text(function(){
+			return "Equivalent in " + $("#EUR").parent('label').text();
+		});
     });
 });
 
@@ -42,11 +50,11 @@ function validate() {
 <p>U. S. Dollar amount</p>
 <input type="text" id="USD_amt" name="USD_amount" value="0">
 <br>
-<input type="radio" id="CAD" value="CAD_choice">Canadian Dollars
+<label><input type="radio" id="CAD" value="CAD_choice">Canadian Dollars</label>
 <br>
-<input type="radio" id="MXN" value="MXN_choice">Mexican Pesos
+<label><input type="radio" id="MXN" value="MXN_choice">Mexican Pesos</label>
 <br>
-<input type="radio" id="EUR" value="EUR_choice">Euros
+<label><input type="radio" id="EUR" value="EUR_choice">Euros</label>
 <p id="equiv_text">Equivalent in ...</p>
 <input type="text" id="Other_amt" name="Other_amount" value="0">
 <br>
