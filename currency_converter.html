@@ -7,15 +7,22 @@ $(document).ready(function(){
     $("#CAD").click(function(){
         $("#equiv_text").text("Canadian");
     });
+    $("#MXN").click(function(){
+        $("#equiv_text").text("Mexican");
+    });
+    $("#EUR").click(function(){
+        $("#equiv_text").text("Euro");
+    });
 });
 
 function validate() {
     var x = document.getElementById("USD_amount").value;
+    var text;
     if (x == "") {
         alert("USD must be filled out");
+		text = "USD must be filled out";
         return false;
     } else {
-        var text;
 
         // If x is Not a Number or less than one
         if (isNaN(x) || x < 1 ) {
@@ -23,9 +30,8 @@ function validate() {
         } else {
             text = "Input OK";
         }
-        document.getElementById("error_msg").innerHTML = text;
-
     }
+        document.getElementById("error_msg").innerHTML = text;
 }
 </script>
 </head>
@@ -34,19 +40,20 @@ function validate() {
 <p>Converting U. S. Dollars to other currencies</p>
 
 <p>U. S. Dollar amount</p>
-<input type="text" name="USD_amount">
+<input type="text" id="USD_amt" name="USD_amount" value="0">
 <br>
-<input type="radio" name="CAD" value="CAD_choice">Canadian Dollars
+<input type="radio" id="CAD" value="CAD_choice">Canadian Dollars
 <br>
-<input type="radio" name="MXN" value="MXN_choice">Mexican Pesos
+<input type="radio" id="MXN" value="MXN_choice">Mexican Pesos
 <br>
-<input type="radio" name="EUR" value="EUR_choice">Euros
+<input type="radio" id="EUR" value="EUR_choice">Euros
 <p id="equiv_text">Equivalent in ...</p>
-<input type="text" name="Other_amount">
+<input type="text" id="Other_amt" name="Other_amount" value="0">
 <br>
 <br>
-<button id="set_other_amount" onclick="validate()">Set to 5</button>
+<button id="set_other_amount" onclick="validate()">Validate</button>
 
+<button id="set_other_amount" onclick="document.getElementById('error_msg').val='5'">Set to 5</button>
 <button onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
 
 <p id="error_msg"></p>
