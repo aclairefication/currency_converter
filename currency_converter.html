@@ -30,6 +30,26 @@ function page_reload(){
 	location.reload();
 };
 
+function calculate_result(){
+	var result_value = 0;
+	var USD_input = document.getElementById("USD_amt").value;
+
+	if ($("#CAD").prop("checked", true)){
+		var CAD_multiplier = 1.2;
+		result_value = USD_input * CAD_multiplier;
+	}
+	else if ($("#MXN").prop("checked", true)){
+		var MXN_multiplier = 0.9;
+		result_value = USD_input * MXN_multiplier;
+	}
+	else if ($("#EUR").prop("checked", true)){
+		var EUR_multiplier = 1.5;
+		result_value = USD_input * EUR_multiplier;
+	}
+
+	set_result_value(result_value);
+};
+
 function set_result_value(result_value){
 	$("#Other_amt").val(result_value);
 };
@@ -71,6 +91,7 @@ function validate() {
 <br>
 <button id="set_other_amount" onclick="validate()">Validate</button>
 <button id="set_other_amount" onclick="page_reload()">Reset</button>
+<button id="set_other_amount" onclick="calculate_result()">Calculate</button>
 <button id="set_other_amount" onclick="set_result_value('5')">Set to 5</button>
 <button onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
 
