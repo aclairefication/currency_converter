@@ -92,8 +92,8 @@ function validate() {
 <button id="set_other_amount" onclick="validate()">Validate</button>
 <button id="set_other_amount" onclick="page_reload()">Reset</button>
 <button id="set_other_amount" onclick="calculate_result()">Calculate</button>
-<button id="set_other_amount" onclick="set_result_value('5')">Set to 5</button>
-<button onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
+<button style="display:none" id="set_other_amount" onclick="set_result_value('5')">Set to 5</button>
+<button style="display:none" onclick="document.getElementById('error_msg').innerHTML=Date()">The time is?</button>
 
 <p id="error_msg"></p>
 </body>
