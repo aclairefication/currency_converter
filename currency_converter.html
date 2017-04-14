@@ -13,9 +13,10 @@ $(document).ready(function(){
 	
     $("#MXN").click(function(){
         $("#equiv_text").text(function(){
-		});
 			return "Equivalent in " + $("#MXN").parent('label').text();
+		});
     });
+	
     $("#EUR").click(function(){
         $("#equiv_text").text(function(){
 			return "Equivalent in " + $("#EUR").parent('label').text();
